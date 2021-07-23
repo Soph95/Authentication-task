@@ -10,8 +10,14 @@ class User extends Model {}
 
 User.init(
   {
-    userName: { type: DataTypes.STRING, allowNull: false },
-    passwordHash: { type: DataTypes.STRING, allowNull: false },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    passwordHash: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,
@@ -19,6 +25,6 @@ User.init(
   }
 );
 
-module.exports = User;
-
 sequelize.sync();
+
+module.exports = { sequelize, User };
